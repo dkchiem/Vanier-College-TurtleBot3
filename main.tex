@@ -1,0 +1,56 @@
+\documentclass[a4paper,11pt]{article}
+
+% Indent below title
+\usepackage{indentfirst}
+% Line spacing
+\usepackage{setspace}
+% Todo notes
+\usepackage{todonotes}
+% Mathematics symbols
+\usepackage{amsmath}
+\usepackage{amssymb}
+\DeclareMathOperator*{\argmin}{argmin}
+% Figures
+\usepackage{graphicx}
+\usepackage{subfig}
+\graphicspath{ {./images/} }
+% Links
+\usepackage[
+colorlinks=true,
+linkcolor=blue,
+citecolor=black
+]{hyperref}
+% Tables
+\usepackage{tabularx}
+% Units
+\usepackage{siunitx}
+% References
+\usepackage[style=apa, backend=biber]{biblatex}
+\addbibresource{sections/references.bib}
+
+\begin{document}
+
+\input{sections/cover.tex}
+
+\newpage
+
+\section{Introduction} \label{introduction}
+\input{sections/1-introduction.tex}
+
+\section{Mapping} \label{mapping}
+\input{sections/2-mapping.tex}
+
+\section{Localization} \label{localization}
+\input{sections/3-localization.tex}
+
+\section{Navigation} \label{navigation}
+\input{sections/4-navigation.tex}
+
+\newpage
+\section*{Acknowledgments} \label{acknowledgments}
+\input{sections/acknowledgments.tex}
+
+\newpage
+\printbibliography
+
+\end{document}
