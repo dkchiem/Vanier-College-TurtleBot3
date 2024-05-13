@@ -7,19 +7,19 @@ Moreover, as of the time of writing this paper, there are still issues to be fix
 Lastly, the robot currently has issues with dead reckoning. As shown in Figure \ref{fig:dead-reckoning}, when moving towards a goal position with this navigation method, the robot stopped \qty{45}{cm} from the goal on the x-axis and \qty{35}{cm} from the goal on the y-axis. The percentage errors can be calculated as follows:
 \begin{equation*}
     \begin{split}
-        \% error_x & =\left|\frac{d_\text{experimental}-d_\text{actual}}{d_\text{experimental}}\right|\times100\%    \\
-                   & =\left|\frac{(\qty{3}{m}-\qty{0.45}{m})-\qty{3}{m}}{\qty{3}{m}-\qty{0.45}{m}}\right|\times100\% \\
-                   & =17.6\%
+        \% error_x & =\left|\frac{d_\text{actual}-d_\text{experimental}}{d_\text{actual}}\right|\times100\% \\
+                   & =\left|\frac{\qty{3}{m}-(\qty{3}{m}-\qty{0.45}{m})}{\qty{3}{m}}\right|\times100\%      \\
+                   & =15\%
     \end{split}
 \end{equation*}
 \begin{equation*}
     \begin{split}
-        \% error_y & =\left|\frac{d_\text{experimental}-d_\text{actual}}{d_\text{experimental}}\right|\times100\%          \\
-                   & =\left|\frac{(\qty{0.6}{m}-\qty{0.35}{m})-\qty{0.6}{m}}{\qty{0.6}{m}-\qty{0.35}{m}}\right|\times100\% \\
-                   & =140\%
+        \% error_y & =\left|\frac{d_\text{actual}-d_\text{experimental}}{d_\text{actual}}\right|\times100\% \\
+                   & =\left|\frac{\qty{0}{m}-\qty{0.35}{m}}{\qty{0}{m}}\right|\times100\%                   \\
+                   & = \text{DNE}
     \end{split}
 \end{equation*}
-These significant errors are causes by two factors. First, there is wheel slippage die to the very smooth floor. Thus, a rougher floor may improve the results. Second, the dead reckoning algorithm produces very low wheel velocities at the beginning and end of the trajectory. Since these velocities are rounded to 0, the robot does not move and error is introduced. A solution addressing this problem has yet to be found.
+These significant errors are caused by two factors. First, there is wheel slippage due to the very smooth floor. Thus, a rougher floor may improve the results. Second, the dead reckoning algorithm produces very low wheel velocities at the beginning and end of the trajectory. Since these velocities are rounded to 0, the robot does not move and error is introduced. A solution addressing this problem has yet to be found.
 
 \begin{figure}[!htb]
     \includegraphics[width=12cm]{dead-reckoning.jpg}
