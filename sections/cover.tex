@@ -1,6 +1,6 @@
 \thispagestyle{empty}
 
-\begin{spacing}{1.5}
+\begin{spacing}{1}
     \centering
     \large Vanier College\\
     \large Faculty of Science and Technology\\
@@ -12,14 +12,16 @@
     \vspace{1cm}
     \large Presented to Prof. Jicai Pan\\
     \large Statics and Engineering Physics (203-HTK-05 sect. 00002)\\
-    \large April 30, 2024
+    \large May 12, 2024
 \end{spacing}
 
 \begin{abstract}
-    English here!
+    This paper serves as an introduction to understanding Simultaneous Localization and Mapping (SLAM) and autonomous navigation in the ROS2 framework using a TurtleBot3 robot. It provides an analysis of the underlying mathematical foundations and algorithms used. As autonomous robots become ubiquitous in society, the need for robust and efficient SLAM techniques is critical. Achieving autonomous navigation involves several key steps. First, a map of the environment needs to be pre-generated \parencite{hessRealtimeLoopClosure2016}. The robot's 360° LiDAR sensor generates scans that are processed and optimized to create submaps. These submaps are then stitched together into a complete map of the environment using a loop-closing optimization. Second, localization is done using Adaptive Monte Carlo Localization (AMCL), which employs a particle filter to estimate the robot's pose (position and orientation) in the environment probabilistically \parencite{thrunProbabilisticRobotics2006}. Third, the map previously built is transformed into a layered cost map \parencite{macenskiDesksROSMaintainers2023}. This cost map inflates obstacles and dynamically considers new ones. By expanding a wavefront from the goal to the robot's starting position, this cost map is transformed into a navigation function represented by wavefront crossing times on the grid map \parencite{philippsenInterpolatedDynamicNavigation2005}. The global path planner (Navigation Function planner), using a gradient descent approach, optimizes the navigation function to find the fastest path to the desired goal location. Fourth, by estimating linear and angular velocities, the local path planner uses the Dynamic Window Approach (DWA) to repeatedly generate small circular arcs that follow the global path \parencite{macenskiDesksROSMaintainers2023}. Altogether, while there are still bugs to be fixed, the robot is able to navigate autonomously.
 \end{abstract}
+
+\filbreak
 
 \renewcommand{\abstractname}{Résumé}
 \begin{abstract}
-    Français ici!
+    En analysant les principes mathématiques et les algorithmes utilisés, cet article sert d'introduction à la localisation et cartographie simultanées (SLAM) et à la navigation autonome dans ROS2 à l'aide d'un robot TurtleBot3. Comme les robots autonomes deviennent progressivement plus communs dans la société, le besoin de techniques SLAM robustes et efficaces est essentiel. La navigation autonome implique plusieurs étapes clés. Premièrement, une carte de l'environnement doit être pré-générée \parencite{hessRealtimeLoopClosure2016}. Le capteur LiDAR 360° du robot génère des scans qui sont transformés en sous-cartes. Celles-ci sont ensuite assemblées pour former une carte complète de l'environnement avec une optimisation de fermeture de boucle. Deuxièmement l'algo\hyp{}rithme Adaptive Monte Carlo Localization (AMCL), qui estime des distributions de probabilité avec des particules, est utilisé pour estimer la position et l'orientation du robot dans l'environnement \parencite{thrunProbabilisticRobotics2006}. Troisièmement, la carte précédemment construite est transformée en une carte de coûts qui gonfle les obstacles et considère les nouveaux qui apparaissent \parencite{macenskiDesksROSMaintainers2023}. En propageant une onde de l'objectif jusqu'à la position de départ du robot, cette carte de coûts est transformée en une fonction de navigation représentée par des temps de passage de l'onde sur la grille \parencite{philippsenInterpolatedDynamicNavigation2005}. Le planificateur global de chemin (Navigation Function Planner), utilisant une approche de descente de gradient, optimise la fonction de navigation pour trouver le chemin le plus rapide vers l'emplacement souhaité. Quatrièmement, en estimant les vitesses linéaires et angulaires, le planificateur local de chemin utilise l'approche par fenêtre dynamique (DWA) pour générer de manière répétée de petits arcs de cercle qui suivent le chemin global \parencite{macenskiDesksROSMaintainers2023}. Bref, même s'il reste encore des bogues à régler, le robot peux naviguer de manière autonome.
 \end{abstract}

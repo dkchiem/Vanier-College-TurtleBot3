@@ -13,20 +13,25 @@
 % Figures
 \usepackage{graphicx}
 \usepackage{subfig}
+\usepackage{placeins}
 \graphicspath{ {./images/} }
 % Links
 \usepackage[
 colorlinks=true,
 linkcolor=blue,
+urlcolor=blue,
 citecolor=black
 ]{hyperref}
 % Tables
 \usepackage{tabularx}
+\usepackage[thinlines]{easytable}
 % Units
 \usepackage{siunitx}
 % References
 \usepackage[style=apa, backend=biber]{biblatex}
 \addbibresource{sections/references.bib}
+% Hyphen
+\usepackage{hyphenat}
 
 \begin{document}
 
@@ -37,14 +42,23 @@ citecolor=black
 \section{Introduction} \label{introduction}
 \input{sections/1-introduction.tex}
 
+\section{Setup} \label{setup}
+\input{sections/2-setup.tex}
+
 \section{Mapping} \label{mapping}
-\input{sections/2-mapping.tex}
+\input{sections/3-mapping.tex}
 
 \section{Localization} \label{localization}
-\input{sections/3-localization.tex}
+\input{sections/4-localization.tex}
 
 \section{Navigation} \label{navigation}
-\input{sections/4-navigation.tex}
+\input{sections/5-navigation.tex}
+
+\section{Implementation and Testing} \label{implementation-and-testing}
+\input{sections/6-implementation-and-testing.tex}
+
+\section{Conclusion} \label{conclusion}
+\input{sections/7-conclusion.tex}
 
 \newpage
 \section*{Acknowledgments} \label{acknowledgments}
